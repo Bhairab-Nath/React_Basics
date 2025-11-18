@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const About = () => {
+  const [count, setCount] = useState(0)
+
+  const incrementCount = ()=>{
+    setCount(count+1)
+  }
+
+  const reset = ()=>{
+    setCount(0)
+  }
+
+  const decrementCount = ()=>{
+    setCount(count-1)
+  }
+
   return (
     <div>
-      <h1>This is about page </h1>
-      <h2>We are Group of Developer's helping your business to digitalize.</h2>
+      <h1>{count}</h1>
+      <button onClick={incrementCount}>+</button>
+      <button onClick={reset}>Reset</button>
+      <button onClick={decrementCount}>-</button>
+
     </div>
   )
 }
